@@ -1,0 +1,62 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz - Control loop frequency
+    use_sim_time: true  # Use simulation time
+
+    #change
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+      
+    # Joint State Broadcaster: Broadcasting joint states to ROS 2 topics
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # # Velocity Controller for the joint group (for differential drive)
+    joint_group_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    # Differential Drive Controller: Control for differential drive robot
+  diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+      right_wheel: fr_wheel_joint  # Left wheel joint name
+      left_wheel: fl_wheel_joint  # Right wheel joint name
+      right_wheel: rr_wheel_joint  # Left wheel joint name
+      left_wheel: rl_wheel_joint  # Right wheel joint name
+      ##########################################################
+      #wheel_separation: 0.487  # Distance between the two wheels (in meters)
+      #wheel_radius: 0.033  # Radius of each wheel (in meters)
+      cmd_vel_timeout: 0.25  # Timeout for command velocity
+      enable_odom_tf: true  # Publish odometry transform
+      odom_frame_id: odom  # Frame ID for odometry
+      base_frame_id: base_link  # Base frame of the robot
+      velocity_rolling_window_size: 5  # Size of rolling window for velocity smoothing
+
+  # joint_state_broadcaster configuration
+  joint_state_broadcaster:
+   ros__parameters:
+      use_sim_time: true  # Use simulation time if working with Gazebo or Ignition
+      joint_names:  # List of joint names to publish states for
+        - fr_wheel_joint
+        - fl_wheel_joint
+        - rr_wheel_joint
+        - rl_wheel_joint
+      state_publish_rate: 50  # Publishing rate in Hz
+      allow_nan_positions: false  # Avoid NaN values in joint positions
+
+
+  joint_group_velocity_controller:
+   ros__parameters:
+     joints:
+       - fr_wheel_joint  # Front-right wheel joint (must match your URDF)
+       - fl_wheel_joint  # Front-left wheel joint (must match your URDF)
+       - rr_wheel_joint  # Rear-right wheel joint (must match your URDF)
+       - rl_wheel_joint  # Rear-left wheel joint (must match your URDF)
+
+     command_interfaces:
+      - velocity  # Control the velocity of each wheel
+     state_interfaces:
+      - position  # State interface for position (used for feedback)
+      - velocity  # State interface for velocity (used for feedback)
+
+     state_publish_rate: 100.0  # Hz - How often the states are published
+

@@ -1,0 +1,226 @@
+<sdf version="1.9">
+  <world name="default">
+
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <!-- Sun Light Source -->
+    <light name="sun" type="directional">
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.8 0.8 0.8 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.8</constant>
+        <linear>0.02</linear>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction> <!-- Sun pointing downwards -->
+    </light>
+
+    <!-- Ground Plane Model -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1.0</ambient>
+            <diffuse>0.6 0.6 0.6 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- Your robot model -->
+    <model name="four_diff_drive">
+      <static>false</static>
+      <link name="base_link">
+        <visual name="base_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>0.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.9 0.4 0.3 1.0</ambient>
+            <diffuse>0.9 0.4 0.3 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name="base_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.5</radius>
+              <length>0.2</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+
+      <!-- Front Left Wheel -->
+      <link name="fl_wheel">
+        <visual name="fl_wheel_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1.0</ambient>
+            <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name="fl_wheel_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+
+      <!-- Front Right Wheel -->
+      <link name="fr_wheel">
+        <visual name="fr_wheel_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1.0</ambient>
+            <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name="fr_wheel_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+
+      <!-- Rear Left Wheel -->
+      <link name="rl_wheel">
+        <visual name="rl_wheel_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1.0</ambient>
+            <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name="rl_wheel_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+
+      <!-- Rear Right Wheel -->
+      <link name="rr_wheel">
+        <visual name="rr_wheel_visual">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1.0</ambient>
+            <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          </material>
+        </visual>
+        <collision name="rr_wheel_collision">
+          <geometry>
+            <cylinder>
+              <radius>0.1</radius>
+              <length>0.05</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      </link>
+
+      <!-- Joints -->
+      <joint name="fl_wheel_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>fl_wheel</child>
+        <pose>0.5 0.25 0 0 0 0</pose> <!-- Positioning Front Left Wheel -->
+        <axis>
+          <xyz>0 0 1</xyz> <!-- Rotate about Z-axis -->
+        </axis>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </joint>
+
+      <joint name="fr_wheel_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>fr_wheel</child>
+        <pose>0.5 -0.25 0 0 0 0</pose> <!-- Positioning Front Right Wheel -->
+        <axis>
+          <xyz>0 0 1</xyz> <!-- Rotate about Z-axis -->
+        </axis>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </joint>
+
+      <joint name="rl_wheel_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>rl_wheel</child>
+        <pose>-0.5 0.25 0 0 0 0</pose> <!-- Positioning Rear Left Wheel -->
+        <axis>
+          <xyz>0 0 1</xyz> <!-- Rotate about Z-axis -->
+        </axis>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </joint>
+
+      <joint name="rr_wheel_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>rr_wheel</child>
+        <pose>-0.5 -0.25 0 0 0 0</pose> <!-- Positioning Rear Right Wheel -->
+        <axis>
+          <xyz>0 0 1</xyz> <!-- Rotate about Z-axis -->
+        </axis>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </joint>
+
+    </model>
+  </world>
+</sdf>
