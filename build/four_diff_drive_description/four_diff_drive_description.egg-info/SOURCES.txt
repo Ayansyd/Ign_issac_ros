@@ -20,7 +20,6 @@ meshes/fl_wheel_1_1.stl
 meshes/fr_wheel_1_1.stl
 meshes/rl_wheel_1_1.stl
 meshes/rr_wheel_1_1.stl
-models/four_diff_drive/four_diff_drive.sdf
 models/worlds/empty_world.sdf
 models/worlds/world_only.sdf
 resource/four_diff_drive_description
@@ -31,5 +30,4 @@ urdf/four_diff_drive.gazebo
 urdf/four_diff_drive.trans
 urdf/four_diff_drive.urdf
 urdf/four_diff_drive.xacro
-urdf/four_diff_drive_updated.urdf
 urdf/materials.xacro

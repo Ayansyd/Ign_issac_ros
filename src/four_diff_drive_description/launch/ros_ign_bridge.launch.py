@@ -38,31 +38,9 @@ def generate_launch_description():
         output='screen'
     )
 
-    # map_static_tf = Node(package='tf2_ros',
-    #                     executable='static_transform_publisher',
-    #                     name='static_transform_publisher',
-    #                     output='log',
-    #                     arguments=['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'map', 'odom'])
-
-    # #change
-    # map_static_tf = Node(package='tf2_ros',
-    #                     executable='static_transform_publisher',
-    #                     name='static_transform_publisher',
-    #                     output='log',
-    #                     arguments=['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'map', 'base_link'])
-
-    # #change
-    # map_static_tf = Node(package='tf2_ros',
-    #                     executable='static_transform_publisher',
-    #                     name='static_transform_publisher',
-    #                     output='log',
-    #                     arguments=['0.0', '0.0', '0.0', '0.0', '0.0', '0.0', 'map', 'base_footprint'])
-
-
 
     return LaunchDescription([
         bridge,
-        #map_static_tf,
         DeclareLaunchArgument(
             'use_sim_time',
             default_value='true',
