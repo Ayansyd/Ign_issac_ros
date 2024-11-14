@@ -90,7 +90,7 @@
   </gazebo>
   <link name="world_link"/>
   <link name="odom"/>    <!--changed from world_link to odom-->
-  <link name="base_link">
+  <link name="base_link">   <!-- changed z as +0.1 in inertial, visual, collision in base and 4 wheel links - anisha -->
     <inertial>
       <origin rpy="0 0 0" xyz="0.38933319773372493 0.025457111892628326 0.14121510359167855"/>
       <mass value="109.04860734197118"/>
@@ -112,7 +112,7 @@
   </link>
   <link name="fr_wheel_1_1">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.0006678192662164517 7.879899210916363e-08 -5.297525051961571e-08"/>
+      <origin rpy="0 0 0" xyz="-0.0006678192662164517 7.879899210916363e-08 -5.297525051961571e-08"/>  <!-- z: -5.297525051961571e-08 to -0.628175 : anisha-->>
       <mass value="13.66073272140364"/>
       <inertia ixx="0.11786" ixy="-0.0" ixz="0.0" iyy="0.062234" iyz="0.0" izz="0.062234"/>
     </inertial>
@@ -132,7 +132,7 @@
   </link>
   <link name="fl_wheel_1_1">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0006669561985305217 1.5491755467333945e-07 -1.2909381374992535e-07"/>
+      <origin rpy="0 0 0" xyz="0.0006669561985305217 1.5491755467333945e-07 -1.2909381374992535e-07"/>  <!-- changed z: -1.2909381374992535e-07 to -0.628175 : anisha-->
       <mass value="13.660732721403573"/>
       <inertia ixx="0.11786" ixy="-0.0" ixz="0.0" iyy="0.062234" iyz="0.0" izz="0.062234"/>
     </inertial>
@@ -152,7 +152,7 @@
   </link>
   <link name="rr_wheel_1_1">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.0006678192662164517 1.9850436036583652e-07 -1.2911571540402678e-07"/>
+      <origin rpy="0 0 0" xyz="-0.0006678192662164517 1.9850436036583652e-07 -1.2911571540402678e-07"/>  <!-- changed z: -1.2911571540402678e-07 to 0.038075 : anisha-->
       <mass value="13.660732721403626"/>
       <inertia ixx="0.11786" ixy="-0.0" ixz="-0.0" iyy="0.062234" iyz="-0.0" izz="0.062234"/>
     </inertial>
@@ -172,7 +172,7 @@
   </link>
   <link name="rl_wheel_1_1">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0006669561985307437 1.5491755470109503e-07 -1.291157157232159e-07"/>
+      <origin rpy="0 0 0" xyz="0.0006669561985307437 1.5491755470109503e-07 -1.291157157232159e-07"/>  <!-- changed z: -1.291157157232159e-07 to 0.038075 : anisha-->
       <mass value="13.660732721403523"/>
       <inertia ixx="0.11786" ixy="-0.0" ixz="0.0" iyy="0.062234" iyz="0.0" izz="0.062234"/>
     </inertial>
@@ -192,12 +192,12 @@
   </link>
   <!-- change -->
   <joint name="world_frame" type="fixed">
-    <origin rpy="1.57 0 0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.245"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
     <parent link="world_link"/>
     <child link="odom"/>
   </joint>
   <joint name="odom_frame" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <origin rpy="0 0 0" xyz="0.599734 -0.134788 1.028175"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
     <parent link="odom"/>
     <child link="base_link"/>
   </joint>
@@ -288,11 +288,11 @@
         <joint_name>rr_wheel_joint</joint_name>
         <joint_name>rl_wheel_joint</joint_name>
         
-         Set the command topic for the group velocity control
+         <!-- Set the command topic for the group velocity control -->
         <topic>/joint_group_velocity_controller/commands</topic>
         
-         Optional parameters 
-        <update_rate>30</update_rate>   Update rate in Hz for the controller 
+         <!-- Optional parameters -->
+        <update_rate>30</update_rate>   <!-- Update rate in Hz for the controller -->
       </plugin>
       
       </gazebo>

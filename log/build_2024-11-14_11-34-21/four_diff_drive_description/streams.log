@@ -1,0 +1,61 @@
+[1.382s] Invoking command in '/home/orinnano/Desktop/IAST_stuff_2_test/src/four_diff_drive_description': PYTHONPATH=/home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/four_diff_drive_description build --build-base /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build install --record /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/install.log --single-version-externally-managed install_data
+[1.901s] running egg_info
+[1.901s] creating ../../build/four_diff_drive_description/four_diff_drive_description.egg-info
+[1.902s] writing ../../build/four_diff_drive_description/four_diff_drive_description.egg-info/PKG-INFO
+[1.902s] writing dependency_links to ../../build/four_diff_drive_description/four_diff_drive_description.egg-info/dependency_links.txt
+[1.903s] writing entry points to ../../build/four_diff_drive_description/four_diff_drive_description.egg-info/entry_points.txt
+[1.903s] writing requirements to ../../build/four_diff_drive_description/four_diff_drive_description.egg-info/requires.txt
+[1.903s] writing top-level names to ../../build/four_diff_drive_description/four_diff_drive_description.egg-info/top_level.txt
+[1.904s] writing manifest file '../../build/four_diff_drive_description/four_diff_drive_description.egg-info/SOURCES.txt'
+[1.907s] reading manifest file '../../build/four_diff_drive_description/four_diff_drive_description.egg-info/SOURCES.txt'
+[1.909s] writing manifest file '../../build/four_diff_drive_description/four_diff_drive_description.egg-info/SOURCES.txt'
+[1.909s] running build
+[1.909s] running build_py
+[1.909s] creating /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build
+[1.910s] creating /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build/lib
+[1.910s] creating /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build/lib/four_diff_drive_description
+[1.910s] copying four_diff_drive_description/key_control.py -> /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build/lib/four_diff_drive_description
+[1.914s] copying four_diff_drive_description/__init__.py -> /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build/lib/four_diff_drive_description
+[1.915s] running install
+[1.916s] running install_lib
+[1.917s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description
+[1.917s] copying /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build/lib/four_diff_drive_description/key_control.py -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description
+[1.917s] copying /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build/lib/four_diff_drive_description/__init__.py -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description
+[1.919s] byte-compiling /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description/key_control.py to key_control.cpython-310.pyc
+[1.920s] byte-compiling /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description/__init__.py to __init__.cpython-310.pyc
+[1.920s] running install_data
+[1.921s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/ament_index
+[1.921s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/ament_index/resource_index
+[1.921s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/ament_index/resource_index/packages
+[1.921s] copying resource/four_diff_drive_description -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/ament_index/resource_index/packages
+[1.921s] copying package.xml -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description
+[1.921s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/launch
+[1.922s] copying launch/ros_ign_bridge.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/launch
+[1.922s] copying launch/display.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/launch
+[1.923s] copying launch/gazebo.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/launch
+[1.924s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+[1.924s] copying urdf/four_diff_drive.urdf -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+[1.924s] copying urdf/four_diff_drive.gazebo -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+[1.925s] copying urdf/four_diff_drive.xacro -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+[1.926s] copying urdf/four_diff_drive.trans -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+[1.927s] copying urdf/materials.xacro -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+[1.928s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+[1.928s] copying meshes/rr_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+[1.987s] copying meshes/fl_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+[2.046s] copying meshes/fr_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+[2.103s] copying meshes/rl_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+[2.163s] copying meshes/base_link.stl -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+[2.369s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/config
+[2.370s] copying config/controller.yaml -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/config
+[2.370s] copying config/display.rviz -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/config
+[2.372s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/models
+[2.372s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds
+[2.372s] copying models/worlds/empty_world.sdf -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds
+[2.373s] copying models/worlds/world_only.sdf -> /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds
+[2.374s] creating /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/models/four_diff_drive
+[2.374s] running install_egg_info
+[2.387s] Copying ../../build/four_diff_drive_description/four_diff_drive_description.egg-info to /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description-0.0.0-py3.10.egg-info
+[2.391s] running install_scripts
+[2.455s] Installing robot_mover script to /home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/four_diff_drive_description
+[2.456s] writing list of installed files to '/home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/install.log'
+[2.527s] Invoked command in '/home/orinnano/Desktop/IAST_stuff_2_test/src/four_diff_drive_description' returned '0': PYTHONPATH=/home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/orinnano/Desktop/IAST_stuff_2_test/install/four_diff_drive_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/four_diff_drive_description build --build-base /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/build install --record /home/orinnano/Desktop/IAST_stuff_2_test/build/four_diff_drive_description/install.log --single-version-externally-managed install_data
