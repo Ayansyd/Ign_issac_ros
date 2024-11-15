@@ -49,20 +49,19 @@ def generate_launch_description():
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
 
-    ### changed by Anisha 12/11/2024 from
-    # Spawn world
-    # ignition_spawn_world = Node(
-    #     package='ros_ign_gazebo',
-    #     executable='create',
-    #     output='screen',
-    #     arguments=['-file', PathJoinSubstitution([
-    #                     get_package_share_directory('four_diff_drive_description'),
-    #                     "models", "worlds", "empty_world.sdf"]),
-    #                '-allow_renaming', 'false'],
-    #     )
+    ### new code added by Anisha 15/11/2024 from
+    ignition_spawn_world = Node(
+        package='ros_ign_gazebo',
+        executable='create',
+        output='screen',
+        arguments=['-file', PathJoinSubstitution([
+                        get_package_share_directory('four_diff_drive_description'),
+                        "models", "worlds", "world_model.sdf"]),
+                   '-allow_renaming', 'false'],
+        )
     
     world_only = os.path.join(get_package_share_directory('four_diff_drive_description'), "models", "worlds", "world_only.sdf")
-    ### changed upto
+    ### added upto
 
     ign_gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -125,11 +124,11 @@ def generate_launch_description():
         robot_state_publisher_node,
         joint_state_publisher_node,
         ign_gazebo_server,
-        ### changed by Anisha 12/11/2024 from
-        #ignition_spawn_world,
+        ### new code added by Anisha 15/11/2024 from
+        # ignition_spawn_world,
         # DeclareLaunchArgument(
         #     'world_name',
-        #     default_value=world_name,
+        #     default_value=world_name,   # code to change later
         #     description='World name'
         # ),
         ### changed upto
