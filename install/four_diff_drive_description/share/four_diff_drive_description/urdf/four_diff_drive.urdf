@@ -92,6 +92,7 @@
 
   <link name="world_link"/>
   <link name="odom"/>    <!--changed from world_link to odom-->
+  <!-- <link name="map"/>  changed world_link to map -->
   <link name="base_link">   <!-- changed z as +0.1 in inertial, visual, collision in base and 4 wheel links - anisha -->
     <inertial>
       <origin rpy="0 0 0" xyz="0.38933319773372493 0.025457111892628326 0.14121510359167855"/>
@@ -101,14 +102,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -121,14 +122,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -141,14 +142,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -161,14 +162,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -181,55 +182,61 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/IAST_stuff_2_test/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   
-  <!-- new code added for camera links - anisha, 15/11/2024 -->
-  <link name="camera_link">
-    <visual>
-       <geometry>
-          <box size="0.010 0.03 0.03"/>
-       </geometry>
-       <material name="red"/>
-    </visual>
+  <!-- new code added for lidar link - anisha, 18/11/2024 -->
+  <link name="laser_frame">
+     <visual>
+        <geometry>
+          <box size="0.05 0.03 0.02"/>
+            <!-- <cylinder radius="0.05" length="0.04"/> -->
+        </geometry>
+        <material name="red"/>
+     </visual>
+     <collision>
+        <geometry>
+          <box size="0.05 0.03 0.02"/>
+        </geometry>
+     </collision>
+     <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
+     <!-- <inertial>
+        <inertia ixx="0.000075" ixy="0.0" ixz="0.0"
+                 iyy="0.000075" iyz="0.0"
+                 izz="0.000125"/>
+     </inertial> -->
   </link>
-  <link name="camera_link_optical"></link>
-  <!-- new code upto -->
+  <!-- new code added upto -->
+ 
 
   <joint name="world_frame" type="fixed">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.245"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
-    <parent link="world_link"/>
+    <parent link="world_link"/>  <!-- changed world_link to map-->
     <child link="odom"/>
   </joint>
+  
   <joint name="odom_frame" type="fixed">
     <origin rpy="0 0 0" xyz="0.599734 -0.134788 1.028175"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
     <parent link="odom"/>
     <child link="base_link"/>
   </joint>
 
-   <!-- new code added for base_link to camera_link joint (in proper format and order as other joints) - anisha, 15/11/2024 -->
-   <joint name="camera_joint" type="fixed">
-    <origin rpy="0 -1.57 -1.57" xyz="0.405 -0.05 0.98"/>   <!-- changed xyz: (0.605,-0.1,0.68) to (0.405,-0.05,0.98), rpy: (0,0,0) to (0,-1.57,-1.57) [1.57 rad=180 degree]-->
+   <!-- new code added for lidar to base_link joint - anisha, 18/11/2024 -->
+  <joint name="laser_joint" type="fixed">
+    <origin rpy="1.57 0 0" xyz="0.405 -0.05 0.88"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
     <parent link="base_link"/>
-    <child link="camera_link"/>
-    <!-- <axis xyz="1.0 0.0 0.0"/> -->   <!-- this was raising issues as no tf found from wheel links to world link, avoiding line solves the issue-->
+    <child link="laser_frame"/>
   </joint>
-  <joint name="camera_optical_joint" type="fixed">
-     <origin rpy="-1.57 0 -1.57" xyz="0 0 0"/>
-     <parent link="camera_link"/>
-     <child link="camera_link_optical"/>
-  </joint>
- 
- <!-- new code upto -->
+   <!-- new code upto -->
 
   <joint name="fr_wheel_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0.177234 -0.134788 0.628175"/>
@@ -305,7 +312,7 @@
 
       <topic>/cmd_vel</topic> 
       <!--<odom_topic>odom</odom_topic>  -->
-      <frame_id>odom</frame_id> <!-- from <odometry_frame> changed from world_link to odom-->
+      <frame_id>odom</frame_id> <!-- from <odometry_frame> changed from world_link to odom to map-->
       <child_frame_id>base_link</child_frame_id> 
       <!--<odom_publisher_frequency>30</odom_publisher_frequency> -->
       <tf_topic>/tf</tf_topic> 
@@ -324,40 +331,45 @@
         <update_rate>30</update_rate>   
       </plugin>
     </gazebo>
-    
-    <!-- new code added for gazebo camera sensors and plugin - anisha, 15/11/2024 -->
-    <gazebo reference="camera_link">
-       <material>Gazebo/Red</material>
 
-       <sensor name="camera" type="camera">
-          <pose>0 0 0 0 0 0</pose>
-          <visualize>true</visualize>
-          <update_rate>10</update_rate>
-          <camera>
-              <horizontal_fov>1.089</horizontal_fov>
-              <image>
-                  <format>R8G8B8</format>
-                  <width>640</width>
-                  <height>480</height>
-              </image>
-              <clip>
-                  <near>0.05</near>
-                  <far>8.0</far>
-              </clip>
-          </camera>
-          <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system">  <!-- original name="camera_controller", filename="libgazebo_ros_camera.so" -->
-            <frame_name>camera_link_optical</frame_name>   <!-- though gazebo refers to camera_link but for other algo, camera_link_optical is referred, thus it's written here -->
+    <!-- new code added for lidar gazebo reference sensor - anisha, 18/11/2024 -->
+    <gazebo reference="laser_frame">
+      <material>Gazebo/Red</material>
+
+      <sensor name="gpu_lidar" type="gpu_lidar">
+         <pose>0 0 0 0 0 0</pose>
+         <topic>scan</topic>
+         <ignition_frame_id>laser_frame</ignition_frame_id>
+         <visualize>true</visualize>
+         <update_rate>10</update_rate>
+         <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <min_angle>-3.14</min_angle>
+                <max_angle>3.14</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.2</min>
+              <max>20</max>
+            </range>
+         </ray>
+         <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system"> 
+          <!-- <frame_name>laser_frame</frame_name>    -->
+          <!-- <output_type>sensor_msgs/msg/LaserScan</output_type> -->
         </plugin>
-        <topic>/camera/image_raw</topic>  <!-- added topic name -->
-        <camera_info_topic>/camera/camera_info</camera_info_topic> <!-- trying this new topic -->
-       </sensor>
-    </gazebo>
-    <!-- new code upto -->
-
-  </robot> 
-
-  
+        
+        <point_cloud_topic>/scan/points</point_cloud_topic>
+       
+      </sensor>
       
+   </gazebo>
+    <!-- new code added upto -->
+  </robot>
+
+
+
   <!-- <plugin filename="gz-sim-joint-state-publisher-system"
   name="gz::sim::systems::JointStatePublisher">
      <topic>/joint_states</topic> 

@@ -116,7 +116,7 @@ def generate_launch_description():
         name='rviz2',
         output='screen',
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
-        #arguments=['-d', os.path.join(share_dir, 'rviz', 'display.rviz')],   #optional
+        arguments=['-d', os.path.join(share_dir, 'config', 'lidar.rviz')],   #optional
     )
 
     return LaunchDescription([
@@ -125,7 +125,8 @@ def generate_launch_description():
         joint_state_publisher_node,
         ign_gazebo_server,
         ### new code added by Anisha 15/11/2024 from
-        # ignition_spawn_world,
+        ign_resource_path,
+        #ignition_spawn_world,
         # DeclareLaunchArgument(
         #     'world_name',
         #     default_value=world_name,   # code to change later
@@ -135,5 +136,5 @@ def generate_launch_description():
         spawn_entity_service,
         spawner_controller_node,
         robot_mover,
-        rviz_node,
+        rviz_node,  # already called in navigation 
     ])

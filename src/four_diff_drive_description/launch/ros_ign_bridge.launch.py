@@ -24,13 +24,13 @@ def generate_launch_description():
                 # Joint states (IGN -> ROS2)
                 '/joint_states@sensor_msgs/msg/JointState[ignition.msgs.Model',
                 # Lidar (IGN -> ROS2)
-                #'/scan@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan',
-                #'/scan/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked',
+                '/scan@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan',
+                '/scan/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked', #if you are using Lidar
                 # IMU (IGN -> ROS2)
                 #'/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU',
                 # Camera (IGN -> ROS2)
-                '/camera/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image',
-                '/camera/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo',
+                # '/camera/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image',
+                # '/camera/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo',
                 #'/camera/rgb/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image',
                 #'/camera/depth/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image',
                 #'/camera/color/image_raw@sensor_msgs/msg/Image[ignition.msgs.Image',

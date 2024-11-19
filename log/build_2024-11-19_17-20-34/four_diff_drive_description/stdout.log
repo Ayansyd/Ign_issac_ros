@@ -1,0 +1,38 @@
+running develop
+running egg_info
+writing four_diff_drive_description.egg-info/PKG-INFO
+writing dependency_links to four_diff_drive_description.egg-info/dependency_links.txt
+writing entry points to four_diff_drive_description.egg-info/entry_points.txt
+writing requirements to four_diff_drive_description.egg-info/requires.txt
+writing top-level names to four_diff_drive_description.egg-info/top_level.txt
+reading manifest file 'four_diff_drive_description.egg-info/SOURCES.txt'
+writing manifest file 'four_diff_drive_description.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/lib/python3.10/site-packages/four-diff-drive-description.egg-link (link to .)
+Installing robot_mover script to /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/lib/four_diff_drive_description
+
+Installed /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description
+running symlink_data
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/resource/four_diff_drive_description -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/ament_index/resource_index/packages
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/package.xml -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/launch/navigation2.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/launch/ros_ign_bridge.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/launch/display.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/launch/gazebo.launch.py -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/urdf/four_diff_drive.urdf -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/urdf/four_diff_drive.gazebo -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/urdf/four_diff_drive.xacro -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/urdf/four_diff_drive.trans -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/urdf/materials.xacro -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/urdf
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/meshes/rr_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/meshes/fl_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/meshes/fr_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/meshes/rl_wheel_1_1.stl -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/meshes/base_link.stl -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/config/controller.yaml -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/config
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/config/four_diff_drive_nav2.yaml -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/config
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/config/display.rviz -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/config
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/models/worlds/world_model.sdf -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/models/worlds/world_only.sdf -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/maps/four_diff_drive_world.yaml -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps
+symbolically linking /home/orinnano/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/maps/four_diff_drive_world.pgm -> /home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps

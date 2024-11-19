@@ -18,7 +18,9 @@ setup(
         (os.path.join('share', package_name, 'config'), glob('config/*')),
         ### changed by Anisha 12/11/2024 from
         (os.path.join('share', package_name, 'models/worlds'), glob('models/worlds/*')),
-        (os.path.join('share', package_name, 'models/four_diff_drive'), glob('models/four_diff_drive/*'))
+        (os.path.join('share', package_name, 'maps'), glob('maps/*')),
+        #(os.path.join('share', package_name, 'models/worlds/meshes'), glob('models/worlds/meshes/*')),
+        #(os.path.join('share', package_name, 'models/four_diff_drive'), glob('models/four_diff_drive/*'))
         ### changed upto
     ],
     install_requires=['setuptools'],
