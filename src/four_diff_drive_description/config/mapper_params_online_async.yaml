@@ -12,7 +12,7 @@ slam_toolbox:
     # ROS Parameters
     #world_frame: world_link
     odom_frame: odom
-    map_frame: map
+    map_frame: map  #map
     base_frame: base_link
     scan_topic: /scan
     use_map_saver: true

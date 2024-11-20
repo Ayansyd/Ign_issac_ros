@@ -1,6 +1,1 @@
-image: four_diff_drive_world.pgm
-resolution: 0.050000
-origin: [-10.000000, -10.000000, 0.000000]
-negate: 0
-occupied_thresh: 0.65
-free_thresh: 0.196
+/home/orinnano256/Desktop/IAST_stuff_2_test_lidar/build/four_diff_drive_description/maps/four_diff_drive_world.yaml

@@ -90,8 +90,8 @@
     <self_collide>true</self_collide>
   </gazebo>
 
-  <link name="world_link"/>
   <link name="map"/>
+  <link name="world_link"/>
   <link name="odom"/>    <!--changed from world_link to odom-->
   <!-- <link name="map"/>  changed world_link to map -->
   <link name="base_link">   <!-- changed z as +0.1 in inertial, visual, collision in base and 4 wheel links - anisha -->
@@ -103,14 +103,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -123,14 +123,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -143,14 +143,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 -0.628175"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/fl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -163,14 +163,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.177234 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rr_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -183,14 +183,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="silver"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.599734 0.134788 0.038075"/>
       <geometry>
-        <mesh filename="file:///home/orinnano/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/meshes/rl_wheel_1_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -218,20 +218,21 @@
   </link>
   <!-- new code added upto -->
  
-
-  <joint name="world_frame" type="fixed">
-    <origin rpy="1.0 0 0" xyz="0.0 0.0 0.245"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
-    <parent link="world_link"/>  <!-- changed world_link to map-->
-    <child link="map"/>
-  </joint>
-
   <joint name="map_frame" type="fixed">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 to 0.0- anisha -->
     <parent link="map"/>  <!-- changed world_link to map-->
+    <child link="world_link"/>
+  </joint>
+
+  <joint name="world_frame" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
+    <parent link="world_link"/>  <!-- changed world_link to map-->
     <child link="odom"/>
   </joint>
+
   
-  <joint name="odom_frame" type="fixed">
+  
+  <joint name="odom_frame" type="fixed">    <!--fixed-->
     <origin rpy="0 0 0" xyz="0.599734 -0.134788 1.028175"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
     <parent link="odom"/>
     <child link="base_link"/>
@@ -385,6 +386,8 @@
      <joint_name>rr_wheel_joint</joint_name>
      <joint_name>rl_wheel_joint</joint_name>
   </plugin>-->
+
+  
 
  
 

@@ -12,21 +12,18 @@ def generate_launch_description():
     # Path to the URDF file
     urdf_path = os.path.join(share_dir, 'urdf', 'four_diff_drive.urdf')
 
-    # # Load the URDF content for robot_state_publisher
+    # Load the URDF content for robot_state_publisher
     with open(urdf_path, 'r') as urdf_file:
         urdf_content = urdf_file.read()
 
-    #### changed by Anisha 12/11/2024 from
     world_name = LaunchConfiguration('world_name', default='four_diff_drive_world')
-    #world_path = os.path.join(share_dir, 'worlds', 'empty_world.sdf')
+    
     ign_resource_path = SetEnvironmentVariable(
-        name='IGN_GAZEBO_RESOURCE_PATH',value=[
-        os.path.join("/opt/ros/humble", "share"),
-        ":" +
-        os.path.join(get_package_share_directory('four_diff_drive_description'), "models")])
-
-    #sdf_path = os.path.join(share_dir, 'urdf', 'four_diff_drive.sdf')  # Make sure your SDF file is here
-    #### changed upto
+        name='IGN_GAZEBO_RESOURCE_PATH', value=[
+            os.path.join("/opt/ros/humble", "share"),
+            ":" + os.path.join(get_package_share_directory('four_diff_drive_description'), "models")
+        ]
+    )
 
     # Declare use_sim_time argument
     use_sim_time = DeclareLaunchArgument(
@@ -49,7 +46,6 @@ def generate_launch_description():
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
 
-    ### new code added by Anisha 15/11/2024 from
     ignition_spawn_world = Node(
         package='ros_ign_gazebo',
         executable='create',
@@ -58,10 +54,9 @@ def generate_launch_description():
                         get_package_share_directory('four_diff_drive_description'),
                         "models", "worlds", "world_model.sdf"]),
                    '-allow_renaming', 'false'],
-        )
+    )
     
     world_only = os.path.join(get_package_share_directory('four_diff_drive_description'), "models", "worlds", "world_only.sdf")
-    ### added upto
 
     ign_gazebo_server = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -74,9 +69,7 @@ def generate_launch_description():
         launch_arguments={
             'paused': 'false',
             'use_sim_time': LaunchConfiguration('use_sim_time'),
-            ### changed by Anisha 12/11/2024 from
-            'ign_args': ' -r -v 3 ' + world_only,  #Add path to World File if so desired
-            ### changed upto
+            'gz_args': '-r -v 3 ' + world_only,
         }.items()
     )
 
@@ -86,7 +79,7 @@ def generate_launch_description():
         name='spawn_entity',
         arguments=[
             '--name', 'four_diff_drive',
-            '--file', urdf_path,   #sdf_path
+            '--file', urdf_path,
             '--z', '1.0'
         ],
         output='screen'
@@ -116,7 +109,7 @@ def generate_launch_description():
         name='rviz2',
         output='screen',
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
-        arguments=['-d', os.path.join(share_dir, 'config', 'lidar.rviz')],   #optional
+        arguments=['-d', os.path.join(share_dir, 'config', 'lidar.rviz')],
     )
 
     return LaunchDescription([
@@ -124,17 +117,21 @@ def generate_launch_description():
         robot_state_publisher_node,
         joint_state_publisher_node,
         ign_gazebo_server,
-        ### new code added by Anisha 15/11/2024 from
         ign_resource_path,
-        #ignition_spawn_world,
-        # DeclareLaunchArgument(
-        #     'world_name',
-        #     default_value=world_name,   # code to change later
-        #     description='World name'
-        # ),
-        ### changed upto
         spawn_entity_service,
         spawner_controller_node,
         robot_mover,
-        rviz_node,  # already called in navigation 
+        rviz_node,
+
+        IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/ros_ign_bridge.launch.py']),
+                                 launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
+                                 ),
+
+        IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/online_async_slam_toolbox.launch.py']),
+                                 launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
+                                 ),
+        
+        IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/navigation2.launch.py']),
+                                 launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
+                                 ),
     ])
