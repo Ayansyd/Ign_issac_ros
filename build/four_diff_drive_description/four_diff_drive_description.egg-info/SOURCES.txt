@@ -12,11 +12,13 @@ config/controller.yaml
 config/display.rviz
 config/four_diff_drive_nav2.yaml
 config/lidar.rviz
+config/mapper_params_online_async.yaml
 four_diff_drive_description/__init__.py
 four_diff_drive_description/key_control.py
 launch/display.launch.py
 launch/gazebo.launch.py
 launch/navigation2.launch.py
+launch/online_async_slam_toolbox.launch.py
 launch/ros_ign_bridge.launch.py
 maps/four_diff_drive_world.pgm
 maps/four_diff_drive_world.yaml

@@ -91,6 +91,7 @@
   </gazebo>
 
   <link name="world_link"/>
+  <link name="map"/>
   <link name="odom"/>    <!--changed from world_link to odom-->
   <!-- <link name="map"/>  changed world_link to map -->
   <link name="base_link">   <!-- changed z as +0.1 in inertial, visual, collision in base and 4 wheel links - anisha -->
@@ -219,8 +220,14 @@
  
 
   <joint name="world_frame" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.245"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
+    <origin rpy="1.0 0 0" xyz="0.0 0.0 0.245"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
     <parent link="world_link"/>  <!-- changed world_link to map-->
+    <child link="map"/>
+  </joint>
+
+  <joint name="map_frame" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 to 0.0- anisha -->
+    <parent link="map"/>  <!-- changed world_link to map-->
     <child link="odom"/>
   </joint>
   

@@ -26,6 +26,8 @@ def generate_launch_description():
                 # Lidar (IGN -> ROS2)
                 '/scan@sensor_msgs/msg/LaserScan[ignition.msgs.LaserScan',
                 '/scan/points@sensor_msgs/msg/PointCloud2[ignition.msgs.PointCloudPacked', #if you are using Lidar
+                # Map (IGN -> ROS2) 
+                '/map@nav_msgs/msg/OccupancyGrid[ignition.msgs.OccupancyGrid',   #newly added- anisha, 20/11/2024
                 # IMU (IGN -> ROS2)
                 #'/imu@sensor_msgs/msg/Imu[ignition.msgs.IMU',
                 # Camera (IGN -> ROS2)
