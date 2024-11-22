@@ -91,9 +91,7 @@
   </gazebo>
 
   <link name="map"/>
-  <link name="world_link"/>
-  <link name="odom"/>    <!--changed from world_link to odom-->
-  <!-- <link name="map"/>  changed world_link to map -->
+  <link name="odom"/> <!-- changed to seee the implementation of map making -->
   <link name="base_link">   <!-- changed z as +0.1 in inertial, visual, collision in base and 4 wheel links - anisha -->
     <inertial>
       <origin rpy="0 0 0" xyz="0.38933319773372493 0.025457111892628326 0.14121510359167855"/>
@@ -200,7 +198,6 @@
      <visual>
         <geometry>
           <box size="0.05 0.03 0.02"/>
-            <!-- <cylinder radius="0.05" length="0.04"/> -->
         </geometry>
         <material name="red"/>
      </visual>
@@ -209,33 +206,22 @@
           <box size="0.05 0.03 0.02"/>
         </geometry>
      </collision>
-     <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
-     <!-- <inertial>
-        <inertia ixx="0.000075" ixy="0.0" ixz="0.0"
-                 iyy="0.000075" iyz="0.0"
-                 izz="0.000125"/>
-     </inertial> -->
   </link>
   <!-- new code added upto -->
+
+  
  
   <joint name="map_frame" type="fixed">
     <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 to 0.0- anisha -->
     <parent link="map"/>  <!-- changed world_link to map-->
-    <child link="world_link"/>
-  </joint>
-
-  <joint name="world_frame" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/> <!-- rpy = 0 0 0 from 1.57 0 0 to keep it forward on the ground >> ayaan, changed z: 0.0 to 0.245 - anisha -->
-    <parent link="world_link"/>  <!-- changed world_link to map-->
     <child link="odom"/>
   </joint>
-
   
-  
-  <joint name="odom_frame" type="fixed">    <!--fixed-->
-    <origin rpy="0 0 0" xyz="0.599734 -0.134788 1.028175"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
+   
+ <joint name="odom_frame" type="fixed">    <!--fixed-->
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
     <parent link="odom"/>
-    <child link="base_link"/>
+    <child link="base_link"/>  <!--0.599734 -0.134788 1.028175-->
   </joint>
 
    <!-- new code added for lidar to base_link joint - anisha, 18/11/2024 -->
@@ -306,7 +292,7 @@
       name="ignition::gazebo::systems::OdometryPublisher">
       <odom_publish_frequency>50</odom_publish_frequency>
       <odom_topic>/odom</odom_topic>
-      <odom_frame>odom</odom_frame>
+      <odom_frame>odom</odom_frame>   <!--changed from odom to map-->
       <robot_base_frame>base_link</robot_base_frame>
       <tf_topic>/odom/tf</tf_topic>
     </plugin>                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
@@ -317,14 +303,16 @@
       <left_joint>fl_wheel_joint</left_joint>
       <right_joint>rr_wheel_joint</right_joint>
       <left_joint>rl_wheel_joint</left_joint>
-
+      <frame_id>odom</frame_id>   <!--changed from odom to map-->
+      <child_frame_id>base_link</child_frame_id>
       <topic>/cmd_vel</topic> 
-      <!--<odom_topic>odom</odom_topic>  -->
-      <frame_id>odom</frame_id> <!-- from <odometry_frame> changed from world_link to odom to map-->
-      <child_frame_id>base_link</child_frame_id> 
-      <!--<odom_publisher_frequency>30</odom_publisher_frequency> -->
-      <tf_topic>/tf</tf_topic> 
+      <odom_topic>/odom</odom_topic>
       </plugin>
+      <!--  -->
+     
+      <!--<odom_publisher_frequency>30</odom_publisher_frequency> -->
+      <!-- <tf_topic>/tf</tf_topic>  -->  <!--commented out to test- anisha-->
+      
 
       <!-- Joint group velocity controller plugin -->
       <plugin filename="ignition-gazebo-joint-group-velocity-controller-system"
@@ -373,9 +361,7 @@
       </sensor>
       
    </gazebo>
-    <!-- new code added upto -->
   </robot>
-
 
 
   <!-- <plugin filename="gz-sim-joint-state-publisher-system"
@@ -387,9 +373,9 @@
      <joint_name>rl_wheel_joint</joint_name>
   </plugin>-->
 
-  
-
- 
+<!--   
+  from <odometry_frame> changed from world_link to odom to map
+       changed from base_link to odom -->
 
 
   

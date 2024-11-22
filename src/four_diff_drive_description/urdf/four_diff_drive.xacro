@@ -5,7 +5,8 @@
 <xacro:include filename="$(find four_diff_drive_description)/urdf/four_diff_drive.trans" />
 <xacro:include filename="$(find four_diff_drive_description)/urdf/four_diff_drive.gazebo" />
 
-<link name="world_link"/>
+<link name="map"/>
+<link name="odom"/>
 
 <link name="base_link">
   <inertial>
@@ -111,14 +112,35 @@
     </geometry>
   </collision>
 </link>
+<link name="laser_frame">
+     <visual>
+        <geometry>
+          <box size="0.05 0.03 0.02"/>
+        </geometry>
+        <material name="red"/>
+     </visual>
+     <collision>
+        <geometry>
+          <box size="0.05 0.03 0.02"/>
+        </geometry>
+     </collision>
+  </link>
 
-
-<joint name="world_frame" type="fixed">
-  <origin xyz="0.0 0.0 0.0" rpy="1.57 0 0"/>
-  <parent link="world_link"/>
-  <child link="base_link"/>
-
+<joint name="map_frame" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>  <!--rpy: before(1.57,0,0) for world to base joint-->
+  <parent link="map"/>
+  <child link="odom"/>
 </joint>
+<joint name="odom_frame" type="fixed">    <!--fixed-->
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
+    <parent link="odom"/>
+    <child link="base_link"/>  <!--0.599734 -0.134788 1.028175-->
+  </joint>
+<joint name="laser_joint" type="fixed">
+    <origin rpy="1.57 0 0" xyz="0.405 -0.05 0.88"/>  <!-- z changed from 0.628175 to 1.028175, x: 0.599734 to 0.999734, y: -0.134788 to -0.434788 - anisha-->
+    <parent link="base_link"/>
+    <child link="laser_frame"/>
+  </joint>
 
 <joint name="fr_wheel_joint" type="continuous">
   <origin xyz="0.177234 -0.134788 0.628175" rpy="0 0 0"/>
@@ -148,9 +170,9 @@
   <axis xyz="1.0 0.0 0.0"/>
 </joint>
 
-<ros2_control name="GazeboSimSystem" type="system">
+<ros2_control name="IgnitionSystem" type="system">
     <hardware>
-      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+      <plugin>ign_ros2_control/IgnitionSystem</plugin>
     </hardware>
 
     <joint name="fr_wheel_joint">
@@ -180,21 +202,81 @@
 
 </ros2_control>
 
-  <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <parameters>$(find four_diff_drive_description)/config/controller.yaml</parameters>
-    </plugin>
-    
-    <plugin name="gazebo_ros_joint_state_publisher"
-        filename="libgazebo_ros_joint_state_publisher.so">
-        <update_rate>60</update_rate>
+  
+     <gazebo>
+<!-- Global odometer plugin -->   
+    <plugin
+      filename="ignition-gazebo-odometry-publisher-system"
+      name="ignition::gazebo::systems::OdometryPublisher">
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>/odom</odom_topic>
+      <odom_frame>odom</odom_frame>   <!--changed from odom to map-->
+      <robot_base_frame>base_link</robot_base_frame>
+      <tf_topic>/odom/tf</tf_topic>
+    </plugin>                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+    <!-- Diff drive controller plugin -->
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+   <!-- wheels -->
+      <right_joint>fr_wheel_joint</right_joint>
+      <left_joint>fl_wheel_joint</left_joint>
+      <right_joint>rr_wheel_joint</right_joint>
+      <left_joint>rl_wheel_joint</left_joint>
+      <frame_id>odom</frame_id>   <!--changed from odom to map-->
+      <child_frame_id>base_link</child_frame_id>
+      <topic>/cmd_vel</topic> 
+      <odom_topic>/odom</odom_topic>
+      </plugin>
+      <!--  -->
+     
+      <!--<odom_publisher_frequency>30</odom_publisher_frequency> -->
+      <!-- <tf_topic>/tf</tf_topic>  -->  <!--commented out to test- anisha-->
+      
+
+      <!-- Joint group velocity controller plugin -->
+      <plugin filename="ignition-gazebo-joint-group-velocity-controller-system"
+            name="joint_group_velocity_controller">
+         
         <joint_name>fr_wheel_joint</joint_name>
         <joint_name>fl_wheel_joint</joint_name>
         <joint_name>rr_wheel_joint</joint_name>
         <joint_name>rl_wheel_joint</joint_name>
+        
+        <topic>/joint_group_velocity_controller/commands</topic>
+        <update_rate>30</update_rate>   
+      </plugin>
+    </gazebo>
 
+    <!-- new code added for lidar gazebo reference sensor - anisha, 18/11/2024 -->
+    <gazebo reference="laser_frame">
+      <material>Gazebo/Red</material>
 
-
-    </plugin>
-  </gazebo>
+      <sensor name="gpu_lidar" type="gpu_lidar">
+         <pose>0 0 0 0 0 0</pose>
+         <topic>scan</topic>
+         <ignition_frame_id>laser_frame</ignition_frame_id>
+         <visualize>true</visualize>
+         <update_rate>10</update_rate>
+         <ray>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <min_angle>-3.14</min_angle>
+                <max_angle>3.14</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.2</min>
+              <max>20</max>
+            </range>
+         </ray>
+         <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system"> 
+          <!-- <frame_name>laser_frame</frame_name>    -->
+          <!-- <output_type>sensor_msgs/msg/LaserScan</output_type> -->
+        </plugin>
+        
+        <point_cloud_topic>/scan/points</point_cloud_topic>
+       
+      </sensor>
+      
+   </gazebo>
 </robot>

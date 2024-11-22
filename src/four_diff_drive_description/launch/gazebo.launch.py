@@ -5,16 +5,20 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution, LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory
 import os
+import xacro
 
 def generate_launch_description():
     share_dir = get_package_share_directory('four_diff_drive_description')
     
     # Path to the URDF file
-    urdf_path = os.path.join(share_dir, 'urdf', 'four_diff_drive.urdf')
+    # urdf_path = os.path.join(share_dir, 'urdf', 'four_diff_drive.urdf')
 
-    # Load the URDF content for robot_state_publisher
-    with open(urdf_path, 'r') as urdf_file:
-        urdf_content = urdf_file.read()
+    # # Load the URDF content for robot_state_publisher
+    # with open(urdf_path, 'r') as urdf_file:
+    #     urdf_content = urdf_file.read()
+
+    xacro_file = os.path.join(share_dir, 'urdf', 'four_diff_drive.xacro')
+    urdf_content = xacro.process_file(xacro_file).toxml()
 
     world_name = LaunchConfiguration('world_name', default='four_diff_drive_world')
     
@@ -79,7 +83,8 @@ def generate_launch_description():
         name='spawn_entity',
         arguments=[
             '--name', 'four_diff_drive',
-            '--file', urdf_path,
+            #'--file', xacro_file,
+            '-topic', 'robot_description',
             '--z', '1.0'
         ],
         output='screen'
@@ -121,17 +126,17 @@ def generate_launch_description():
         spawn_entity_service,
         spawner_controller_node,
         robot_mover,
-        rviz_node,
+        #rviz_node,
 
         IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/ros_ign_bridge.launch.py']),
                                  launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
                                  ),
 
-        IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/online_async_slam_toolbox.launch.py']),
-                                 launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
-                                 ),
+        # IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/online_async_slam_toolbox.launch.py']),
+        #                          launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
+        #                          ),
         
-        IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/navigation2.launch.py']),
+        IncludeLaunchDescription(PythonLaunchDescriptionSource([share_dir + '/launch/nav2.launch.py']),
                                  launch_arguments={'use_sim_time': LaunchConfiguration('use_sim_time')}.items()
                                  ),
     ])

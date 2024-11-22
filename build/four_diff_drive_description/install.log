@@ -5,8 +5,8 @@
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/ament_index/resource_index/packages/four_diff_drive_description
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/package.xml
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch/online_async_slam_toolbox.launch.py
-/home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch/navigation2.launch.py
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch/ros_ign_bridge.launch.py
+/home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch/nav2.launch.py
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch/display.launch.py
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/launch/gazebo.launch.py
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/urdf/four_diff_drive.urdf
@@ -27,9 +27,11 @@
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds/world_model.sdf
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/models/worlds/world_only.sdf
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps/navigation_008.pgm
+/home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps/my_map.yaml
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps/four_diff_drive_world.yaml
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps/four_diff_drive_world.pgm
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps/navigation_008.yaml
+/home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/share/four_diff_drive_description/maps/my_map.pgm
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description-0.0.0-py3.10.egg-info/PKG-INFO
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description-0.0.0-py3.10.egg-info/top_level.txt
 /home/orinnano256/Desktop/IAST_stuff_2_test_lidar/install/four_diff_drive_description/lib/python3.10/site-packages/four_diff_drive_description-0.0.0-py3.10.egg-info/zip-safe
